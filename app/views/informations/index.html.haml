@@ -1,0 +1,28 @@
+.info
+  .info__header
+
+  .info__image
+    %div.slick
+      %div
+        %img{alt: "介護",src: "18df9e57223a7c1b44149b83db9593a0_w.jpg"}
+      %div
+        %img{alt: "保育",src: "9497efd44913e48ae7434b0a08c00956_w.jpg"}
+      %div
+        %img{alt: "相談",src: "0d9c20fe032ce770d4ae11ce85851b42_w.jpg"}
+      -# %div
+      -#   %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+      -# %div
+      -#   %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+      -# %div
+      -#   %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+  .info__contents
+    - @informations.each do |information|
+      .info-contents__list{:style => "background-image: url(#{information.image});"}
+        %p= information.name
+        %p= information.prefectures
+        %p= information.cities
+        %p= information.text
+
+  .info__footer
+    Copyright Wel-Net 2019.
+  
