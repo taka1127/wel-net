@@ -13,17 +13,16 @@
   &__image{
     background-color: whitesmoke;
     height: 500px;
+    box-sizing: border-box;
+    
     .slick-list{
       margin: 0 auto;
-      padding-left: 30%;
+      padding-left: 60%;
       padding-top: 50px ;
     }
     .slick-track{
       margin-right: 100px;
-      &__slick-slide{
-      }
     }
-
   }
   &__contents{
     background-color: rgb(140, 196, 140);
@@ -32,8 +31,6 @@
     text-align:left;
     padding: 10px;
     margin: 0 auto;
-    &__list{
-    }
   }
   &__footer{
     width: 100%;
