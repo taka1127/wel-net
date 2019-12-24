@@ -1,0 +1,9 @@
+.contents
+  .contents__header
+    事業所紹介・入力フォーム
+  .contents__containaer
+
+    = form_with(model: @informations, url:".",local: true)  do |form|
+      = form.text_field :image, placeholder: "画像のurlを貼り付けてください", class: "text_field"
+      = form.text_area :text, placeholder: "・事業所の紹介\n・事業所の特色\n・空き情報\n・アピールポイント\nなどを入力して下さい" , rows: "10",class:"text_area"
+      = form.submit "送信", class: "send"
