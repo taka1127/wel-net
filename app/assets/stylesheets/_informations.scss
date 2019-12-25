@@ -47,6 +47,16 @@
       overflow: scroll;
       height: 100px;
       background-color: bisque;
+      display: flex;
+      &__show{
+        display: inline-block;
+      }
+      &__edit{
+        display: inline-block;
+      }
+      &__delete{
+        display: inline-block;
+      }
 
     }
   }
