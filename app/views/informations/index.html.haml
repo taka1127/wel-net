@@ -1,6 +1,15 @@
 .info
   .info__header
     福祉総合情報サイトWel-Net
+    .info__header__grid-6
+    - if user_signed_in?
+      .info__header__grid-6__user-out
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to  "投稿する", "/tweets/new", class: "post"
+    - else
+      .info__header__grid-6__user-in
+        = link_to "ログイン", new_user_session_path, class: 'post'
+        = link_to "新規登録", new_user_registration_path, class: 'post'
   .info__image
     %div.slick
       %div

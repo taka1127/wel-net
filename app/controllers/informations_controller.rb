@@ -1,4 +1,6 @@
 class InformationsController < ApplicationController
+  before_action :set_information, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @informations = Information.all
   end
@@ -19,7 +21,6 @@ class InformationsController < ApplicationController
   end
 
   def edit
-    @information = Information.find(params[:id])
   end
 
   def update
@@ -29,13 +30,19 @@ class InformationsController < ApplicationController
   end
 
   def show
-    # information = Information.find(params[:id])
-    @information = Information.find(params[:id])
   end
 
   private
   def information_params
     params.require(:information).permit(:name, :image, :text)
+  end
+
+  def set_information
+    @information = Information.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
   
 end
