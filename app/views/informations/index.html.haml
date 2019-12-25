@@ -17,11 +17,25 @@
         %img{alt: "家",src: "eb6935419a2d65a242f8f2891d48d415_w.jpg"}
   .info__contents
     - @informations.each do |information|
-      .info__contents__list{:style => "background-image: url(#{information.image});"}
+
+      .info__contents__list
         %p= information.name
         %p= information.prefectures
         %p= information.cities
-        %p= information.text
+        %p= simple_format(information.text)
+        %p= information.image
+
+      .info__contents__list__show
+        = link_to information_path(information.id), method: :get do
+          詳細
+      .info__contents__list__edit
+        = link_to edit_information_path(information.id), method: :get do
+          編集
+
+      .info__contents__list__delete
+        -# %image_tag{'arrow_top.png'} 
+        = link_to information_path(information.id), method: :delete do
+          削除
 
   .info__footer
     Copyright Wel-Net 2019.

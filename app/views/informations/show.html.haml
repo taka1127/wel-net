@@ -1,0 +1,18 @@
+.contents.row
+  .content_post
+    .more
+      .more_list
+      = link_to edit_information_path, method: :get do
+        編集
+      = link_to informations_path, method: :delete do
+        削除
+    %span.name
+      = @information.name
+      = @information.prefectures
+      = @information.cities
+      = simple_format(@information.text)
+      = @information.image
+
+
+      = link_to informations_path(@information),class:"edit-btn" do
+        ホーム画面に戻る

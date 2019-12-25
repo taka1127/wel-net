@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root "informations#index"
-  resources :informations, only: [:index, :new, :create]
+  resources :informations, only: [:index, :new, :create, :destroy, :edit, :update, :show]
 end
