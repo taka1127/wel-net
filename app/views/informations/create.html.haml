@@ -1,5 +1,7 @@
-完了です
--# .contents.row
--#   .success
--#     送信が完了しました。
--#   .btn{:href => "/"} ホーム画面へ戻る
+.contents
+  .contents__success
+    送信が完了しました。
+  .contents__btn 
+    = link_to informations_path(@information),class:"edit-btn" do
+      %span<>
+      ホーム画面へ戻る

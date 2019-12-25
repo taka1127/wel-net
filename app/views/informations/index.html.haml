@@ -10,14 +10,14 @@
       %div
         %img{alt: "相談",src: "0d9c20fe032ce770d4ae11ce85851b42_w.jpg"}
       %div
-        %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+        %img{alt: "家族",src: "00a315137469b1ef00bcaba1b3b22e9e_t.jpeg"}
       %div
-        %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+        %img{alt: "老夫婦",src: "e4a02113f81d15c24c0311fe6f17cbb5_w.jpg"}
       %div
-        %img{alt: "背景",src: "6172f59d8a251947e60f10bcee55000b_w.jpg"}
+        %img{alt: "家",src: "eb6935419a2d65a242f8f2891d48d415_w.jpg"}
   .info__contents
     - @informations.each do |information|
-      .info-contents__list{:style => "background-image: url(#{information.image});"}
+      .info__contents__list{:style => "background-image: url(#{information.image});"}
         %p= information.name
         %p= information.prefectures
         %p= information.cities
