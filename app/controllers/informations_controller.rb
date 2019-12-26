@@ -2,7 +2,7 @@ class InformationsController < ApplicationController
   before_action :set_information, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
   def index
-    @informations = Information.all
+    @informations = Information.includes(:office)
   end
 
   def new
@@ -30,11 +30,13 @@ class InformationsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @information.comments.includes(:offices, :user)
   end
 
   private
   def information_params
-    params.require(:information).permit(:name, :image, :text)
+    params.require(:information).permit(:name, :image, :text).merge(offices_id: current_user.id)
   end
 
   def set_information

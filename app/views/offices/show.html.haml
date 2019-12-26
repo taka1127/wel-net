@@ -1,0 +1,7 @@
+.contents.row
+  = @office_name
+    さんの投稿一覧
+  - @informations.each do |information|
+    .content_post
+      = simple_format(informations.text)
+      %span.name= information.name

@@ -2,18 +2,21 @@ Rails.application.routes.draw do
   #deviseを使ったofficeテーブル機能
   devise_for :offices
   # devise_for :offices,controllers: {
-  #   sessions:      'offices_sessions_path',
-  #   passwords:     'offices_passwords_path',
-  #   registrations: 'offices_registrations_path'
+  #   sessions:      'offices/sessions',
+  #   passwords:     'offices/passwords',
+  #   registrations: 'offices/registrations'
   # }   
   #deviseを使ったuserテーブル機能
   devise_for :users
   # devise_for :users,controllers: {
-  #   sessions:      'users_sessions_path',
-  #   passwords:     'users_passwords_path',
-  #   registrations: 'users_registrations_path'
+  #   sessions:      'users/sessions',
+  #   passwords:     'users/passwords',
+  #   registrations: 'users/registrations'
   # }
   root "informations#index"
-  resources :informations #各アクションの定義
+  resources :informations do#各アクションの定義
+    resources :comments, only: :create
+  end
+  resources :offices, only: :show
 end
 

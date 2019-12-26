@@ -12,7 +12,24 @@
       = @information.cities
       = simple_format(@information.text)
       = @information.image
+    .container
+    - if current_user
+      = form_with(model: [@tweet, @comment], local: true) do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "2"
+        = form.submit "SEND"
+    - else
+    %strong
+    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+    .comments
+    %h4 ＜コメント一覧＞
+    - if @comments
+    - @comments.each do |comment|
+      = link_to comment.user.nickname, "user_registration_path#{comment.user_id}"
+        ：
+      = @comment.text
 
 
-      = link_to informations_path(@information),class:"edit-btn" do
-        ホーム画面に戻る
+
+    = link_to informations_path(@information),class:"edit-btn" do
+      ホーム画面に戻る

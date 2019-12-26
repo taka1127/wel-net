@@ -16,6 +16,7 @@
   %header.header
     .header__title
       = link_to "Wel-Net", root_path, class: "header__title--text"
+
     .header__right
     - if user_signed_in?
       .header__right__user
@@ -24,11 +25,15 @@
       .header__right__user
         = link_to "利用者様ログイン", user_session_path, class: "header__right--user"
         = link_to "新規登録", new_user_registration_path, class: "header__right--user"
-
+    .header__right
     - if user_signed_in?
       .header__right__office
-        = link_to "事業所様ログアウト", destroy_office_session_path, class: "header__right--office"
-        = link_to "事業所登録", "/informations#new", class: "header__right--office"
+        = current_user.nickname
+        .user__info
+        = link_to "マイページ", "informations#show#{current_user.id}"
+        = link_to "ログアウト", destroy_office_session_path, method: :delete
+
+        = link_to "事業所登録", "informations#new", class: "header__right--office"
     - else
       .header__right__office
         = link_to "事業所様ログイン", office_session_path, class: "header__right--office"
