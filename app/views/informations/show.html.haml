@@ -4,7 +4,7 @@
       .more_list
       = link_to edit_information_path, method: :get do
         編集
-      = link_to informations_path, method: :delete do
+      = link_to destroy_user_session_path, method: :delete do
         削除
     %span.name
       = @information.name

@@ -1,15 +1,4 @@
 .info
-  .info__header
-    福祉総合情報サイトWel-Net
-    .info__header__grid-6
-    - if user_signed_in?
-      .info__header__grid-6__user-out
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        = link_to  "投稿する", "/tweets/new", class: "post"
-    - else
-      .info__header__grid-6__user-in
-        = link_to "ログイン", new_user_session_path, class: 'post'
-        = link_to "新規登録", new_user_registration_path, class: 'post'
   .info__image
     %div.slick
       %div
@@ -28,24 +17,22 @@
     - @informations.each do |information|
 
       .info__contents__list
-        %p= information.name
-        %p= information.prefectures
-        %p= information.cities
-        %p= simple_format(information.text)
-        %p= information.image
+        -# %p= information.prefectures
+        -# %p= information.cities
+        .info__contents__list__box
+          .info__contents__list__box__name
+            = link_to information_path(information.id), method: :get do
+              =information.name
+          .info__contents__list__box__cities
+            %p= information.prefectures
+            %p= information.cities
+          -# .info__contents__list__edit
+          -#   = link_to edit_information_path(information.id), method: :get do
+          -#     編集
+          -# .info__contents__list__delete
+          -#   = link_to information_path(information.id), method: :delete do
+          -#     削除
 
-      .info__contents__list__show
-        = link_to information_path(information.id), method: :get do
-          詳細
-      .info__contents__list__edit
-        = link_to edit_information_path(information.id), method: :get do
-          編集
-
-      .info__contents__list__delete
-        -# %image_tag{'arrow_top.png'} 
-        = link_to information_path(information.id), method: :delete do
-          削除
-
-  .info__footer
-    Copyright Wel-Net 2019.
+  -# .info__footer
+  -#   Copyright Wel-Net 2019.
   

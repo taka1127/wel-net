@@ -1,4 +1,57 @@
 @import "reset";
+body{
+  background-color: #f6f6f6;
+  min-width: 100vh;
+  .header{
+    height: 100px;
+    width: 100%;
+    padding: 0 150px;
+    background-color: #55c500;
+    color: #fff;
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    border: solid 1px white;
+    padding: 10px;
+    &__title{
+      // font-size: 50px;
+      line-height: 100px;
+      margin: 0 auto;
+      &--text{
+        text-decoration: none;
+        color: #fff;
+        font-size: 80px;
+        right: 100px;
+        line-height: 100px;
+        text-shadow: 1px 1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px -1px 0 #000;
+      }
+    }
+    &__right{
+      &__user{
+        border: solid 1px;
+        &--user{
+          text-decoration: none;
+          line-height: 100px;
+          color: #fff;
+          margin-left:15px;
+        }
+        
+      }
+      &__office{
+        border: solid 1px;
+        &--office{
+          text-decoration: none;
+          line-height: 100px;
+          color: #fff;
+          margin-left:15px;
+        }
+      }
+    }
+  }
+}
 @import "informations";
 
 @import "font-awesome-sprockets";
@@ -12,7 +65,3 @@
 @import "create";
 @import "destroy";
 @import "show";
-
-.grid-6{
-  background-color: black;
-}

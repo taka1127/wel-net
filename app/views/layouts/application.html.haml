@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title WelNet
+    %title Wel-Net
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,13 +12,17 @@
 
     -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    .grid-6
-    - if user_signed_in?
-      .grid-6__user-out
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        = link_to  "投稿する", "/tweets/new", class: "post"
-    - else
-      .grid-6__user-in
-        = link_to "ログイン", new_user_session_path, class: 'post'
-        = link_to "新規登録", new_user_registration_path, class: 'post'
-  = yield
+    %body
+  %header.header
+    .header__title
+      = link_to "Wel-Net", root_path, class: "header__title--text"
+    .header__right
+      .header__right__user
+        = link_to "利用者様ログイン", new_user_session_path, class: "header__right--user"
+        = link_to "新規登録", new_user_registration_path, class: "header__right--user"
+      .header__right__office
+        = link_to "事業所様ログイン", new_office_session_path, class: "header__right--office"
+        = link_to "新規登録", new_office_registration_path, class: "header__right--office"
+  .contents
+    = yield
+
