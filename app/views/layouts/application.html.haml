@@ -17,11 +17,21 @@
     .header__title
       = link_to "Wel-Net", root_path, class: "header__title--text"
     .header__right
+    - if user_signed_in?
       .header__right__user
-        = link_to "利用者様ログイン", new_user_session_path, class: "header__right--user"
+        = link_to "利用者様ログアウト", destroy_user_session_path, method: :delete, class: "header__right--user"
+    - else
+      .header__right__user
+        = link_to "利用者様ログイン", user_session_path, class: "header__right--user"
         = link_to "新規登録", new_user_registration_path, class: "header__right--user"
+
+    - if user_signed_in?
       .header__right__office
-        = link_to "事業所様ログイン", new_office_session_path, class: "header__right--office"
+        = link_to "事業所様ログアウト", destroy_office_session_path, class: "header__right--office"
+        = link_to "事業所登録", "/informations#new", class: "header__right--office"
+    - else
+      .header__right__office
+        = link_to "事業所様ログイン", office_session_path, class: "header__right--office"
         = link_to "新規登録", new_office_registration_path, class: "header__right--office"
   .contents
     = yield
