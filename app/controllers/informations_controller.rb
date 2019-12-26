@@ -12,7 +12,6 @@ class InformationsController < ApplicationController
   def create
     @information = Information.new(information_params)
     @information.save
-    # redirect_to root_path
   end
 
   def destroy
@@ -36,7 +35,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:name, :image, :text).merge(offices_id: current_user.id)
+    params.require(:information).permit(:name, :image, :text).merge(offices_id: current_offices.id)
   end
 
   def set_information
@@ -44,7 +43,8 @@ class InformationsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    # redirect_to action: :index unless user_signed_in?
+    # redirect_to action: :index unless office_signed_in?
   end
   
 end

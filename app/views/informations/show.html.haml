@@ -4,7 +4,7 @@
       .more_list
       = link_to edit_information_path, method: :get do
         編集
-      = link_to destroy_user_session_path, method: :delete do
+      = link_to information_path, method: :delete do
         削除
     %span.name
       = @information.name
@@ -14,7 +14,7 @@
       = @information.image
     .container
     - if current_user
-      = form_with(model: [@tweet, @comment], local: true) do |form|
+      = form_with(model: [@tweet, @comment], url: "information_path", local: true) do |form|
         = form.text_area :text, placeholder: "コメントする", rows: "2"
         = form.submit "SEND"
     - else
