@@ -11,7 +11,7 @@ class InformationsController < ApplicationController
 
   def create
     @information = Information.new(information_params)
-    @information.save
+    @informations.save
   end
 
   def destroy
@@ -35,7 +35,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:name, :image, :text).merge(offices_id: current_offices.id)
+    params.require(:information).permit(:image, :text).merge(offices_id: current_office.id)
   end
 
   def set_information

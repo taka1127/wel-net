@@ -29,24 +29,25 @@ body{
                     -1px -1px 0 #000;
       }
     }
-    &__right{
+    &__left{
       &__user{
+        background-color: rgb(177, 208, 248);
         border: solid 1px;
+        padding: 10px;
+        margin-right: 50px;
         &--user{
           text-decoration: none;
-          line-height: 100px;
-          color: #fff;
-          margin-left:15px;
         }
-        
       }
+    }
+    &__right{
       &__office{
+        background-color:rgb(209, 209, 145);
         border: solid 1px;
+        margin-left: 50px;
+        padding: 10px;
         &--office{
           text-decoration: none;
-          line-height: 100px;
-          color: #fff;
-          margin-left:15px;
         }
       }
     }
