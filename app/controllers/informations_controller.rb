@@ -11,7 +11,8 @@ class InformationsController < ApplicationController
 
   def create
     @information = Information.new(information_params)
-    @informations.save
+    @information.save
+    # redirect_to root_path
   end
 
   def destroy
@@ -30,7 +31,7 @@ class InformationsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @information.comments.includes(:offices, :user)
+    @comments = @information.comments.includes(:office, :user)
   end
 
   private
