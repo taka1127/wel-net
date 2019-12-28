@@ -1,7 +1,44 @@
+-# .contents.row
+-#   = @office_name
+-#     さんの投稿一覧
+-#   - @informations.each do |information|
+-#     .content_post
+-#       = simple_format(informations.text)
+-#       %span.name= information.name
 .contents.row
-  = @office_name
-    さんの投稿一覧
-  - @informations.each do |information|
-    .content_post
-      = simple_format(informations.text)
-      %span.name= information.name
+  .content_post
+    .more
+      .more_list
+      = link_to edit_information_path, method: :get do
+        編集
+      = link_to information_path, method: :delete do
+        削除
+    %span.name
+      -# = @information.name
+      -# = @information.prefectures
+      -# = @information.cities
+      -# = simple_format(@information.text)
+      -# = @information.image
+    .container
+    - if current_user
+      = form_with(model: [@office, @comment], url: "information_path", local: true) do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "2"
+        = form.submit "SEND"
+    - else
+    %strong
+    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+    .comments
+    %h4 ＜コメント一覧＞
+    - if @comments
+    - @comments.each do |comment|
+      = link_to comment.user.nickname, "user_registration_path#{comment.user_id}"
+        ：
+      = @comment.text
+
+
+
+    = link_to informations_path(@information),class:"edit-btn" do
+      ホーム画面に戻る
+
+

@@ -7,8 +7,8 @@ class OfficesController < ApplicationController
   #   @office.save
   # end
   def show
-    @office = Offices.find(params[:id])
+    @office = Office.find(params[:id])
     @office_name = current_office.office_name
-    @informations = current_user.informations
+    @informations = current_office.informations
   end
 end

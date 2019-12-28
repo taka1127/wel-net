@@ -30,7 +30,7 @@
       .header__right__office
         = current_office.office_name
         .header__right__office__info
-        = link_to "マイページ", information_path(current_office.id)
+        = link_to "マイページ", office_path(current_office.id)
         = link_to "ログアウト", destroy_office_session_path, method: :delete
         = link_to "事業所登録", new_information_path, class: "header__right--office"
     - else
