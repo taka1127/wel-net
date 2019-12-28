@@ -1,14 +1,14 @@
 class OfficesController < ApplicationController
-  # def new
-  #   @office = Office.new
-  # end
-  # def create
-  #   @office = Office.new(office_params)
-  #   @office.save
-  # end
+
   def show
-    @office = Office.find(params[:id])
+    # @offices = Office.new(office_params)
+    @offices = Office.find(params[:id])
     @office_name = current_office.office_name
     @informations = current_office.informations
   end
+  # private
+  # def office_params
+  #   params.require(:information).permit(:name, :prefectures, :cities,  :image, :text).merge(office_id: current_office.id)
+  # end
+  
 end
