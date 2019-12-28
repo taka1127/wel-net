@@ -5,32 +5,54 @@
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
-
-  &__header{
-    width: 100%;
-    background-color:rgb(162, 211, 182);
-    height: 100px;
-    font-size: 60px;
-    color: white;
-    text-align: center;
+  background-color: beige;
+  // &__header{
+  //   width: 100%;
+    // background-color:rgb(162, 211, 182);
+  //   height: 100px;
+  //   font-size: 60px;
+  //   color: white;
+  //   text-align: center;
     // &__grid-6{
     //   background-color: black;
     // }
-  }
+  // }
   &__image{
-    color: skyblue;
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: whitesmoke;
-    height: 400px;
-    box-sizing: border-box;
-    background-color: yellow;
-    margin-bottom: -15px;
-    
+    // color: skyblue;
+    // font-size: 30px;
+    // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: beige;
+    // height: 400px;
+    // box-sizing: border-box;
+    // background-color: yellow;
+    // margin-bottom: -15px;
+    margin: 0 auto;
+    &__left{
+      background-color:beige;
+      width: 400px;
+      height: 400px;
+      margin-right: 20px;
+      float: left;
+      font-size: 25px;
+      font-family: cursive;
+      color: blue;
+      text-align: center;
+    }
+    &__right{
+      background-color:  beige;
+      width: 400px;
+      height: 400px;
+      float: right;
+      font-size: 22px;
+      font-family: cursive;
+      color: black;
+      text-align: center;
+    }
     .slick-list{
       // margin: 0 auto;
-      padding-left: 60%;
+      // padding-left: 50px;
       // padding-top: 50px ;
+      // margin-left: 60px;
     }
     .slick-track{
       margin-right: 100px;
@@ -41,7 +63,6 @@
     height: 420px;
     overflow: scroll;
     text-align:left;
-    padding-top: 40px;
     margin: 0 auto;
     border: solid 1px;
     &__list{

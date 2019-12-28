@@ -6,15 +6,14 @@ body{
     height: 100px;
     width: 100%;
     padding: 0 150px;
-    background-color: #55c500;
+    background-color: orange;
     color: rgb(255, 255, 255);
     display: flex;
     font-size: 30px;
-    justify-content: space-between;
-    border: solid 1px white;
+    // justify-content: space-between;
+    border: solid 2px white;
     padding: 10px;
     &__title{
-      // font-size: 50px;
       line-height: 100px;
       margin: 0 auto;
       &--text{
@@ -32,9 +31,10 @@ body{
     &__left{
       &__user{
         background-color: rgb(177, 208, 248);
-        border: solid 1px;
+        border: solid 2px blue;
         padding: 10px;
         margin-right: 50px;
+        font-size: 20px;
         &--user{
           text-decoration: none;
         }
@@ -42,10 +42,11 @@ body{
     }
     &__right{
       &__office{
-        background-color:rgb(209, 209, 145);
-        border: solid 1px;
+        background-color:rgb(248, 180, 180);
+        border: solid 2px red;
         margin-left: 50px;
         padding: 10px;
+        font-size: 20px;
         &--office{
           text-decoration: none;
         }

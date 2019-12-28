@@ -20,16 +20,16 @@
     .header__left
     - if user_signed_in?
       .header__left__user
-        = link_to "利用者様ログアウト", destroy_user_session_path, method: :delete, class: "header__right--user"
+        = link_to "利用者様ログアウト", destroy_user_session_path, method: :delete, class: "header__left--user"
     - else
       .header__left__user
-        = link_to "利用者様ログイン", user_session_path, class: "header__right--user"
-        = link_to "新規登録", new_user_registration_path, class: "header__right--user"
+        = link_to "利用者様ログイン", user_session_path, class: "header__left--user"
+        = link_to "新規登録", new_user_registration_path, class: "header__left--user"
     .header__right
     - if office_signed_in?
       .header__right__office
         = current_office.office_name
-        .header__right__office__info
+        .header__right__office
         = link_to "マイページ", office_path(current_office.id)
         = link_to "ログアウト", destroy_office_session_path, method: :delete
         = link_to "事業所登録", new_information_path, class: "header__right--office"
