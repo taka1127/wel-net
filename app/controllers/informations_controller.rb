@@ -38,9 +38,9 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:image, :text).merge(office_id: current_office.id)
+    params.require(:information).permit(:name, :prefectures, :cities,  :image, :text).merge(office_id: current_office.id)
   end
-
+  
   def set_information
     @information = Information.find(params[:id])
     # @information = Information.find(params[:office_id])
