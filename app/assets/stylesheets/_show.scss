@@ -12,12 +12,15 @@
       height: 100px;
       width: 100px;
       background-color: chartreuse;
-      &__list{
-        height: 100px;
+    }
+    .more_list{
+      height: 100px;
       width: 100%;
       background-color: blue;
-
-      }
+    }
+    .name{
+      width: 100px;
+      height: 6;
     }
     .container{
       height: 100px;

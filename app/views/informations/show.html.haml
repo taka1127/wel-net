@@ -2,16 +2,17 @@
   .content_post
     .more
       .more_list
-      = link_to edit_information_path, method: :get do
+      = link_to edit_information_path, method: :get ,class: "post" do
         編集
       = link_to information_path, method: :delete do
         削除
     %span.name
-      = @information.name
-      = @information.prefectures
-      = @information.cities
-      = simple_format(@information.text)
-      = @information.image
+    = @information.name
+    = @information.prefectures
+    = @information.cities
+    = simple_format(@information.text)
+    = @information.image
+
     .container
     - if current_user
       = form_with(model: [@office, @comment], url: "information_path", local: true) do |form|
