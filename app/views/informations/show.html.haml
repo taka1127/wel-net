@@ -1,36 +1,33 @@
-.contents.row
-  .content_post
-    .more
-      .more_list
-      = link_to edit_information_path, method: :get ,class: "post" do
+.show-content
+  .show-content__post
+    .show-content__post__more
+      = link_to edit_information_path, method: :get ,class: "edit" do
         編集
-      = link_to information_path, method: :delete do
+      = link_to information_path, method: :delete  ,class:"delete"do
         削除
-    %span.name
-    = @information.name
-    = @information.prefectures
-    = @information.cities
-    = simple_format(@information.text)
-    = @information.image
+    .show-content__post__more__name
+      = @information.name
+      = @information.prefectures
+      = @information.cities
+      = simple_format(@information.text)
+    .show-content__post__more__image
+      = @information.image.url
 
-    .container
-    - if current_user
-      = form_with(model: [@office, @comment], url: "information_path", local: true) do |form|
-        = form.text_area :text, placeholder: "コメントする", rows: "2"
-        = form.submit "SEND"
-    - else
-    %strong
-    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .show-content__post__more__container
+      %p 　　　　　　　　　　　　　　　　　※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
-    .comments
-    %h4 ＜コメント一覧＞
-    - if @comments
-    - @comments.each do |comment|
-      = link_to comment.user.nickname, "user_registration_path#{comment.user_id}"
-        ：
-      = @comment.text
+      - if current_user
+        = form_with(model: [@office, @comment], url: "information_comments_path", local: true) do |form|
+          = form.text_area :text, placeholder: "コメントする", rows: "2",class:"form"
+          = form.submit "送信",class:"send"
+      - else
 
-
-
-    = link_to informations_path(@information),class:"edit-btn" do
-      ホーム画面に戻る
+    .show-content__post__more__comment
+      %h4 ＜コメント一覧＞
+      -# - if @comments
+      - @comments.each do |comment|
+        -# = link_to comment.user.nickname, "user_registration_path#{comment.user_id}"
+        -#   ：
+        = comment.text
+      = link_to informations_path(@information),class:"edit-btn" do
+        ホーム画面に戻る
