@@ -6,7 +6,7 @@
       = form.text_field :name, placeholder: "事業所名を入力して下さい" ,class:"text_field"
       = form.text_field :prefectures, placeholder: "都道府県名を入力してください（例）滋賀県", class: "text_field"
       = form.text_field :cities, placeholder: "市町村名を入力してください（例）大津市", class: "text_field"
-      = form.text_field :image, placeholder: "画像のurlを貼り付けてください", class: "text_field"
+      = form.file_field :image, placeholder: "画像のurlを貼り付けてください", class: "text_field"
       = form.text_area :text, placeholder: "・事業所の紹介\n・事業所の特色\n・空き情報\n・アピールポイント\nなどを入力して下さい" ,class:"text_area"
       = form.submit "送信", class: "send"
 
