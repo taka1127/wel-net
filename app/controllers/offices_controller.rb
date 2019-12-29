@@ -8,7 +8,7 @@ class OfficesController < ApplicationController
   end
   # private
   # def office_params
-  #   params.require(:information).permit(:name, :prefectures, :cities,  :image, :text).merge(office_id: current_office.id)
+  #   params.require(:offices).permit(:name, :prefectures, :cities,  :image, :text)
   # end
   
 end

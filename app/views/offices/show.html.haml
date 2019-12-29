@@ -1,10 +1,11 @@
-.contents.row
-  %p
+.contents
+  .contents__name
     = @office_name
-    さんの投稿一覧
+    様の投稿一覧
+  .contents__post
   - @informations.each do |information|
-    .content_post{:style => "background-image: url(#{information.image});"}
+    .contents__post__content
       = simple_format(information.text)
-      %span.name
-      = information.name
+    .contents__post__image
+      = image_tag information.image.url, class: 'lower-message__image'
 

@@ -34,17 +34,40 @@
         %img{alt: "老夫婦",src: "e4a02113f81d15c24c0311fe6f17cbb5_w.jpg"}
       %div
         %img{alt: "家",src: "eb6935419a2d65a242f8f2891d48d415_w.jpg"}
+  .info__header
+    　介護　　　　　　　　　　保育　　　　　　　　　　障がい
   .info__contents
-    - @informations.each do |information|
+    .info__contents__left
+      - @informations.each do |information|
 
-      .info__contents__list
-        -# %p= information.prefectures
-        -# %p= information.cities
-        .info__contents__list__box
-          .info__contents__list__box__name
-            = link_to information_path(information.id), method: :get do
-              =information.name
-          .info__contents__list__box__cities
-            %p= information.prefectures
-            %p= information.cities
+        .info__contents__left__list
+          .info__contents__left__list__box
+            .info__contents__left__list__box__name
+              = link_to information_path(information.id), method: :get do
+                =information.name
+            .info__contents__left__list__box__cities
+              %p= information.prefectures
+              %p= information.cities
+    .info__contents__center
+      - @informations.each do |information|
+
+        .info__contents__center__list
+          .info__contents__center__list__box
+            .info__contents__center__list__box__name
+              = link_to information_path(information.id), method: :get do
+                =information.name
+            .info__contents__center__list__box__cities
+              %p= information.prefectures 
+              %p= information.cities
+    .info__contents__right
+      - @informations.each do |information|
+
+        .info__contents__right__list
+          .info__contents__right__list__box
+            .info__contents__right__list__box__name
+              = link_to information_path(information.id), method: :get do
+                =information.name
+            .info__contents__right__list__box__cities
+              %p= information.prefectures
+              %p= information.cities
   
