@@ -10,11 +10,8 @@ class InformationsController < ApplicationController
   end
 
   def create
-    # Information.create(offices_id: current_office.id, name: information_params[:name], image: information_params[:image], text: information_params[:text])
-    # Information.create(information_params)
     @information = Information.new(information_params)
     @information.save
-    # redirect_to root_path
   end
 
   def destroy
@@ -30,7 +27,7 @@ class InformationsController < ApplicationController
     information.update(information_params)
     # redirect_to root_path
   end
-
+  
   def show
     @comment = Comment.new
     @comments = @information.comments.includes(:office)
@@ -38,7 +35,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:name, :prefectures, :cities, :image, :text ).merge(office_id: current_office.id)
+    params.require(:information).permit(:name, :text, :prefectures, :cities, :image ).merge(office_id: current_office.id)
   end
 
   def set_information

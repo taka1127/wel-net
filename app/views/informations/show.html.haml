@@ -14,19 +14,18 @@
       = image_tag @information.image.url ,size:250
 
     .show-content__post__more__container
-
       - if current_office
-        = form_with(model: [@information, @comment], url:"/informations/:information_id/comments",method: "post", local: true) do |form|
+        = form_with(model: [@information, @comment], url:"/informations/#{@information.id}/comments" , local: true,id:"new_comment") do |form|
           = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
           = form.submit "送信",class:"send"
       - else
-        %p 　　　　　　　　　　　　　　　　　※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .show-content__post__more__btn    
       = link_to informations_path,class:"edit-btn" do
         ホーム画面に戻る
 
     .show-content__post__more__comment
-      %h4 ＜コメント一覧＞
+      %p ＜コメント一覧＞
       - if @comments
         - @comments.each do |comment|
           = comment.office.office_name
