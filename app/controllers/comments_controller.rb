@@ -10,6 +10,6 @@ class CommentsController < ApplicationController
   end
 end
 
-コメントの確認
-コントローラー
-offices_id違い
+# コメントの確認
+# コントローラー
+# offices_id違い

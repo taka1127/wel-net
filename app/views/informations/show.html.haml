@@ -11,17 +11,16 @@
       = @information.cities
       = simple_format(@information.text)
     .show-content__post__more__image
-      = @information.image.url
+      = image_tag @information.image.url ,size:250
 
     .show-content__post__more__container
-      %p 　　　　　　　　　　　　　　　　　※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
       - if current_user
         = form_with(model: [@office, @comment], url: "information_comments_path", local: true) do |form|
           = form.text_area :text, placeholder: "コメントする", rows: "2",class:"form"
           = form.submit "送信",class:"send"
       - else
-
+        %p 　　　　　　　　　　　　　　　　　※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .show-content__post__more__comment
       %h4 ＜コメント一覧＞
       -# - if @comments
