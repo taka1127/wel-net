@@ -16,19 +16,20 @@
     .show-content__post__more__container
 
       - if current_office
-        = form_with(model: [@information, @comment], local: true) do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2",class:"form"
+        = form_with(model: [@information, @comment], url:"/informations/:information_id/comments",method: "post", local: true) do |form|
+          = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
           = form.submit "送信",class:"send"
       - else
         %p 　　　　　　　　　　　　　　　　　※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .show-content__post__more__btn    
+      = link_to informations_path,class:"edit-btn" do
+        ホーム画面に戻る
+
     .show-content__post__more__comment
       %h4 ＜コメント一覧＞
       - if @comments
-      %p
         - @comments.each do |comment|
-          = link_to comment.office.office_name, "office_path#{comment.office_id}"
-            ：
-          = @comment.text
-      = link_to informations_path(@information),class:"edit-btn" do
-        ホーム画面に戻る
+          = comment.office.office_name
+          ：
+          = simple_format(comment.text)
 

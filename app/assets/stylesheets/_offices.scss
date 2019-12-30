@@ -44,7 +44,7 @@
         padding-top: 30px;
       }
       &__container{
-        height: 120px;
+        height: 100px;
         width: 1200px;
         background-color: whitesmoke;
         margin-top: 300px;
@@ -61,12 +61,14 @@
         }
 
       }
+      &__btn{
+        height: 30px;
+      }
       &__comment{
         height: 300px;
         width: 1200px;
         background-color: whitesmoke;
         overflow: scroll;
-        margin-top: 30px;
       }
     }
   }

@@ -33,7 +33,7 @@ class InformationsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @information.comments.includes(:office, :user)
+    @comments = @information.comments.includes(:office)
   end
 
   private
