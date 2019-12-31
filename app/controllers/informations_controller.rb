@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   before_action :set_information, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show]
+  # before_action :move_to_index, except: [:index, :show]
   def index
     @informations = Information.includes(:office)
   end
@@ -35,7 +35,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:name, :text, :prefectures, :cities, :image ).merge(office_id: current_office.id)
+    params.require(:information).permit(:name, :text, :prefectures, :cities, :image ).merge(office_id:current_office.id)
   end
 
   def set_information
@@ -43,10 +43,10 @@ class InformationsController < ApplicationController
     # @information = Information.find(params[:office_id])
   end
 
-  def move_to_index
-    # redirect_to action: :index unless user_signed_in?
-    # redirect_to action: :index unless office_signed_in?
-  end
+  # def move_to_index
+  #   # redirect_to action: :index unless user_signed_in?
+  #   # redirect_to action: :index unless office_signed_in?
+  # end
   
 end
 

@@ -1,20 +1,22 @@
 .show-content
   .show-content__post
     .show-content__post__more
-      = link_to edit_information_path, method: :get ,class: "edit" do
-        編集
-      = link_to information_path, method: :delete  ,class:"delete"do
-        削除
+    - if office_signed_in? && current_office.id == @information.office_id
+      .show-content__post__more
+        = link_to edit_information_path, method: :get ,class: "edit" do
+          編集
+        = link_to information_path, method: :delete  ,class:"delete"do
+          削除
     .show-content__post__more__name
       = @information.name
       = @information.prefectures
       = @information.cities
       = simple_format(@information.text)
     .show-content__post__more__image
-      = image_tag @information.image.url ,size:250
+      = image_tag @information.image.url ,size:250 if @information.image.present?
 
     .show-content__post__more__container
-      - if current_office
+      - if current_office 
         = form_with(model: [@information, @comment], url:"/informations/#{@information.id}/comments" , local: true,id:"new_comment") do |form|
           = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
           = form.submit "送信",class:"send"
@@ -28,7 +30,7 @@
       %p ＜コメント一覧＞
       - if @comments
         - @comments.each do |comment|
-          = comment.office.office_name
+          = comment.office.office_name 
           ：
           = simple_format(comment.text)
 

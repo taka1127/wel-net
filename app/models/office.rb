@@ -5,5 +5,4 @@ class Office < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :informations
   has_many :comments
-  # mount_uploader :image, ImageUploader
 end
