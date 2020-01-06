@@ -95,6 +95,16 @@
             color: #FFF;
             font-weight: bold;
             letter-spacing: 0.05em;
+            cursor: pointer;
+            box-shadow: 0 3px #264fa7;
+            display: inline-block;
+            width: 100%;
+            border-radius:10px;
+          }
+          &__name:active{
+            box-shadow:none;
+            position:relative;
+            top:7px;
           }
           &__cities{
             text-align: center;
@@ -128,6 +138,17 @@
             color: #FFF;
             font-weight: bold;
             letter-spacing: 0.05em;
+            // transition:all 0.5s;
+            cursor: pointer;
+            box-shadow: 0 3px #158843;
+            display: inline-block;
+            width: 100%;
+            border-radius:10px;
+          }
+          &__name:active{
+            box-shadow:none;
+            position:relative;
+            top:7px;
           }
           &__cities{
             text-align: center;
@@ -161,6 +182,16 @@
             color: #FFF;
             font-weight: bold;
             letter-spacing: 0.05em;
+            cursor: pointer;
+            box-shadow: 0 3px #cac146;
+            display: inline-block;
+            width: 100%;
+            border-radius:10px;
+          }
+          &__name:active{
+            box-shadow:none;
+            position:relative;
+            top:7px;
           }
           &__cities{
             text-align: center;
