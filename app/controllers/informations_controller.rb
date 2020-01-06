@@ -35,7 +35,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.require(:information).permit(:name, :text, :prefectures, :cities, :image ).merge(office_id:current_office.id)
+    params.require(:information).permit(:name, :text, :prefectures, :cities, :image ).merge(office_id: current_office.id)
   end
 
   def set_information
