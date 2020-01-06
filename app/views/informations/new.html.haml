@@ -2,7 +2,7 @@
   .contents__header
     事業所紹介・入力フォーム
   .contents__containaer
-    = form_with(model:@information, url:".",local: true)  do |form|
+    = form_with(model:@information, url:informations_path,metod: :post,local: true)  do |form|
       = form.text_field :name,placeholder: "事業所名を入力して下さい" ,class:"text_field"
       = form.text_field :prefectures, placeholder: "都道府県名を入力してください（例）滋賀県", class: "text_field"
       = form.text_field :cities, placeholder: "市町村名を入力してください（例）大津市", class: "text_field"
