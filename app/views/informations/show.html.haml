@@ -17,9 +17,9 @@
 
     .show-content__post__more__container
       - if current_office 
-        = form_with(model: [@information, @comment], url:"/informations/#{@information.id}/comments" , local: true,id:"new_comment") do |form|
+        = form_with(model: [@information, @comment], url:information_comments_path(@information.id) , local: true,id:"new_comment") do |form|
           = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
-          = form.submit "送信",class:"send"
+          = form.submit "送信",class:"send"#{@information.id}
       - else
         %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .show-content__post__more__btn    

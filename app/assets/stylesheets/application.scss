@@ -45,20 +45,20 @@ body{
         // opacity: 0.8;
         transition:all 1s;
         cursor: pointer;
-        box-shadow: 0 3px #2859c2;
+        box-shadow: 0 6px #1a45a1;
         &--user{
           text-decoration: none;
         }
-      }
-      &__user:hover{
-        // opacity:1;
-        background-color: rgba(177, 208, 248,1);
-
-      }
-      &__user:active{
-        box-shadow:none;
-        position:relative;
-        top:5px;
+        &:hover{
+          // opacity:1;
+          background-color: rgba(177, 208, 248,1);
+  
+        }
+        &:active{
+          box-shadow:none;
+          position:relative;
+          top:5px;
+        }
       }
     }
     &__right{
@@ -73,23 +73,27 @@ body{
         // opacity: 0.8;
         transition:all 1s;
         cursor: pointer;
-        box-shadow: 0 3px #d3452b;
+        box-shadow: 0 6px #b3331c;
         &--office{
           text-decoration: none;
         }
-      }
-      &__office:hover{
-        // opacity:1;
-        background-color:rgba(248, 180, 180,1);
-      }
-      &__office:active{
-        box-shadow:none;
-        position:relative;
-        top:5px;
+        &:hover{
+          // opacity:1;
+          background-color:rgba(248, 180, 180,1);
+        }
+        &:active{
+          box-shadow:none;
+          position:relative;
+          top:5px;
+        }
       }
     }
   }
 }
+
+
+@import "devise";
+
 @import "informations";
 
 @import "font-awesome-sprockets";
@@ -104,5 +108,6 @@ body{
 @import "destroy";
 @import "show";
 @import "offices";
-@import "signup";
+
+
 

@@ -1,28 +1,60 @@
-%h2 新規登録
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
+.account.row
+  .container
+    %h2 新規登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
 
-  .field
-  = f.label :事業所名
-  %em (最大文字数は20文字です)
-  %br/
-  = f.text_field :office_name, autofocus: true, maxlength: "20"
+      .fields
+        = f.label :事業所名 ,class:"field"
+        %em (最大文字数は20文字です) 
+        %br/
+        = f.text_field :office_name, autofocus: true, maxlength: "20"  ,class:"field"
 
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :パスワード
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} 文字以上入力してください)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :再度パスワード入力
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "登録"
-= render "offices/shared/links"
+      .fields
+        = f.label :メールアドレス ,class:"field"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email" ,class:"field"
+      .fields
+        = f.label :パスワード ,class:"field"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上入力してください)
+        %br/
+        = f.password_field :password, autocomplete: "new-password" ,class:"field"
+      .fields
+        = f.label :再度パスワード入力 ,class:"field"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password" ,class:"field"
+      .actions
+        = f.submit "登録" ,class:"sub" 
+    = render "offices/shared/links"
+
+
+-# %h2 新規登録
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+
+-#   .field
+-#   = f.label :事業所名
+-#   %em (最大文字数は20文字です)
+-#   %br/
+-#   = f.text_field :office_name, autofocus: true, maxlength: "20"
+
+-#   .field
+-#     = f.label :メールアドレス
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :パスワード
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} 文字以上入力してください)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :再度パスワード入力
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "登録"
+-# = render "offices/shared/links"

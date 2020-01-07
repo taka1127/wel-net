@@ -1,22 +1,23 @@
-.contents.row
+-# .contents.row
+.account.row
   .container
     %h2 新規登録
     = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
       = devise_error_messages!
-      .field
-        = f.label :メールアドレス
+      .fields
+        = f.label :メールアドレス ,class:"field"
         %br/
-        = f.email_field :email
-      .field
-        = f.label :パスワード
+        = f.email_field :email ,class:"field"
+      .fields
+        = f.label :パスワード ,class:"field"
         - if @validatable
           %em
             (#{@minimum_password_length} 文字以上)
         %br/
-        = f.password_field :password, autocomplete: "off"
-      .field
-        = f.label :再度パスワード入力
+        = f.password_field :password, autocomplete: "off" ,class:"field"
+      .fields
+        = f.label :再度パスワード入力 ,class:"field"
         %br/
-        = f.password_field :password_confirmation, autocomplete: "off"
+        = f.password_field :password_confirmation, autocomplete: "off" ,class:"field"
       .actions
-        = f.submit "登録"
+        = f.submit "登録" ,class:"sub"
