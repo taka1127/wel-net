@@ -9,36 +9,6 @@
     %link{href: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", rel: "stylesheet", type: "text/css"}/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", type: "text/javascript"}
-
-    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %body
-  %header.header
-    .header__title
-      = link_to "Wel-Net", root_path, class: "header__title--text"
-
-    .header__left
-    - if user_signed_in?
-      .header__left__user
-        = current_user.nickname
-        さん
-        .header__left__user_in
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__left--user"
-    - elsif office_signed_in?
-      .header__right__office
-        = current_office.office_name 
-        さん
-        .header__right__office_in
-          = link_to "マイページ", office_path(current_office.id)
-          = link_to "ログアウト", destroy_office_session_path, method: :delete
-          = link_to "投稿", new_information_path, class: "header__right--office"
-    - else
-      .header__left__user
-        = link_to "利用者様ログイン", user_session_path, class: "header__left--user"
-        = link_to "新規登録", new_user_registration_path, class: "header__left--user"
-      .header__right__office
-        = link_to "事業所様ログイン", office_session_path, class: "header__right--office"
-        = link_to "新規登録", new_office_registration_path, class: "header__right--office"
-  .contents
+  %body
     = yield
 

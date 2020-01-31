@@ -1,95 +1,5 @@
 @import "reset";
-body{
-  background-color: #f6f6f6;
-  min-width: 100vh;
-  box-sizing: border-box;
-  .header{
-    height: 100px;
-    width: 100%;
-    padding: 0 150px;
-    background-color: orange;
-    color: rgb(255, 255, 255);
-    display: flex;
-    font-size: 30px;
-    // justify-content: space-between;
-    border: solid 2px white;
-    padding: 10px;
-    &__title{
-      line-height: 100px;
-      margin: 0 auto;
-      &--text{
-        text-decoration: none;
-        color:rgb(255, 255, 255);
-        font-size: 80px;
-        right: 100px;
-        line-height: 100px;
-        text-shadow: 1px 1px 0 #000,
-                    -1px 1px 0 #000,
-                    1px -1px 0 #000,
-                    -1px -1px 0 #000;
-        transition:all 1s;
-      }
-      &--text:hover{
-        font-size: 100px;
-      }
-    }
-    &__left{
-      &__user{
-        background-color: rgba(177, 208, 248,0.8);
-        border: solid 2px blue;
-        padding: 10px;
-        margin-right: 50px;
-        font-size: 20px;
-        color: black;
-        border-radius:10px;
-        // opacity: 0.8;
-        transition:all 1s;
-        cursor: pointer;
-        box-shadow: 0 6px #1a45a1;
-        &--user{
-          text-decoration: none;
-        }
-        &:hover{
-          // opacity:1;
-          background-color: rgba(177, 208, 248,1);
-  
-        }
-        &:active{
-          box-shadow:none;
-          position:relative;
-          top:5px;
-        }
-      }
-    }
-    &__right{
-      &__office{
-        background-color:rgba(248, 180, 180,0.8);
-        border: solid 2px red;
-        margin-left: 50px;
-        padding: 10px;
-        font-size: 20px;
-        color: black;
-        border-radius:10px;
-        // opacity: 0.8;
-        transition:all 1s;
-        cursor: pointer;
-        box-shadow: 0 6px #b3331c;
-        &--office{
-          text-decoration: none;
-        }
-        &:hover{
-          // opacity:1;
-          background-color:rgba(248, 180, 180,1);
-        }
-        &:active{
-          box-shadow:none;
-          position:relative;
-          top:5px;
-        }
-      }
-    }
-  }
-}
+
 
 
 @import "devise";
@@ -108,6 +18,7 @@ body{
 @import "destroy";
 @import "show";
 @import "offices";
+@import "header";
 
 
 

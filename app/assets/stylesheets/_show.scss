@@ -21,6 +21,7 @@
     padding: 0 20px;
   }
   &__post{
+    width: 100%;
     // margin-top: 120px;
     margin: 0 auto;
     // display: flexbox;
@@ -28,7 +29,7 @@
     &__content{
       float: left;
       height: 300px;
-      width: 600px;
+      width: 50%;
       background-color: white;
       border: solid 2px;
       overflow: scroll;
@@ -39,7 +40,7 @@
       float:right;
       margin-right: 70px;
       height:300px;
-      width: 600px;
+      width: 50%;
       background-color: white;
       border: solid 2px;
       margin-top: 20px;
