@@ -46,8 +46,8 @@
               = link_to information_path(information.id), method: :get do
                 =information.name
             .info__contents__left__list__box__cities
-              %p= information.prefectures
-              %p= information.cities
+              %p= information.prefecture
+              %p= information.city
     .info__contents__center
       .info__contents__center__header
         保育
@@ -58,8 +58,8 @@
               = link_to information_path(information.id), method: :get do
                 =information.name
             .info__contents__center__list__box__cities
-              %p= information.prefectures 
-              %p= information.cities
+              %p= information.prefecture
+              %p= information.city
     .info__contents__right
       .info__contents__right__header
         障がい
@@ -70,6 +70,6 @@
               = link_to information_path(information.id), method: :get do
                 =information.name
             .info__contents__right__list__box__cities
-              %p= information.prefectures
-              %p= information.cities
+              %p= information.prefecture
+              %p= information.city
   
