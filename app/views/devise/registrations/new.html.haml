@@ -5,6 +5,10 @@
     = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
       = devise_error_messages!
       .fields
+        = f.label :ニックネーム ,class:"field"
+        %br/
+        = f.text_field :nickname ,class:"field"
+      .fields
         = f.label :メールアドレス ,class:"field"
         %br/
         = f.email_field :email ,class:"field"

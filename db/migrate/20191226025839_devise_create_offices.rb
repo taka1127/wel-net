@@ -4,9 +4,9 @@ class DeviseCreateOffices < ActiveRecord::Migration[5.2]
   def change
     create_table :offices do |t|
       ## Database authenticatable
+      t.string :office_name,        null:false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
