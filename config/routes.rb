@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :offices
   devise_for :users
-  root to: "informations#index"
+
+  root to: "top#index"
   resources :informations do
     resources :comments, only: :create
   end

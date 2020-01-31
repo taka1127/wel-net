@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+
+.top-body{
+  height: 100vh;
+  width: 100vw;
+  background-image: image-url('mountains-4777410_1280.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  &__header{
+
+  }
+  &__container{
+    // background-image: image-url('landscape-2331416__480.jpg');
+    // background-repeat: no-repeat;
+    // background-position: center center;
+  }
+  &__footer{
+
+  }
+  
+}
