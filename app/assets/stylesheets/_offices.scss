@@ -1,20 +1,15 @@
 .show-content{
-  height: 130vh;
   width: 100%;
-  background-color:whitesmoke;
   display: block;
   margin: 0 auto;
   &__post{
     height: 100%;
-    width: 1210px;
-    // background-color: yellowgreen;
+    width: 100%;
     margin: 0 auto;
     border: solid 1px;
     &__more{
       height: 30px;
       width: 100%;
-      background-color: whitesmoke;
-      // text-align: center;
       line-height: 30px;
       padding-left: 20px;
       border-bottom: solid 1px;
@@ -29,33 +24,24 @@
       }
       &__name{
         height: 300px;
-        width: 600px;
-        background-color: whitesmoke;
+        width: 50%;
         float: left;
         border-bottom: solid 1px;
         padding: 20px;
       }
       &__image{
         height: 300px;
-        width: 608px;
-        background-color: whitesmoke;
+        width: 50%;
         float: right;
         border-bottom: solid 1px;
         text-align: center;
         padding-top: 30px;
       }
       &__container{
-        height: 100px;
-        width: 1200px;
-        background-color: whitesmoke;
-        margin-top: 300px;
-        padding-left: 70px;
-        padding-top: 10px;
         .form{
           width: 1000px;
           height: 80px;
           font-size: 20px;
-          // margin-top: 10px;
         }
         .send{
           text-decoration: none;
@@ -67,10 +53,10 @@
       }
       &__comment{
         height: 500px;
-        width: 1200px;
-        background-color: whitesmoke;
+        width: 100%;
         padding: 20px;
         overflow: scroll;
+        border: solid 1px;
       }
     }
   }

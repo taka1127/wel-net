@@ -1,4 +1,5 @@
 .show-content
+  = render 'offices/shared/user_header'
   .show-content__post
     .show-content__post__more
     - if office_signed_in? && current_office.id == @information.office_id
@@ -21,7 +22,7 @@
           = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
           = form.submit "送信",class:"send"#{@information.id}
       - else
-        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
     .show-content__post__more__btn    
       = link_to informations_path,class:"edit-btn" do
         ホーム画面に戻る
