@@ -5,19 +5,40 @@
 .top-body{
   height: 100vh;
   width: 100vw;
-  background-image: image-url('mountains-4777410_1280.webp');
+  background-image: image-url('baby-2416718__480.webp');
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
+  position: relative;
+  
   &__header{
-
+    height: 10%;
+    // background-color: beige;
   }
   &__container{
-    // background-image: image-url('landscape-2331416__480.jpg');
-    // background-repeat: no-repeat;
-    // background-position: center center;
+    height: 60%;
+    font-size: 100px;
+    color: skyblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 600px;
+    padding: 50px;
+    
+    // background-color: brown;
   }
   &__footer{
-
+    height: 30%;
+    // background-color: burlywood;
   }
   
 }
+// .top-body::before{
+//   /* 透過した黒を上から重ねるイメージ */
+//   background-color: rgba(0,0,0,0.4);
+//   /* 自由に位置指定 */
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   content: ' ';
+// }
