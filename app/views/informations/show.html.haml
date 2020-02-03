@@ -10,8 +10,8 @@
           削除
     .show-content__post__more__name
       = @information.name
-      = @information.prefectures
-      = @information.cities
+      = @information.prefecture
+      = @information.city
       = simple_format(@information.text)
     .show-content__post__more__image
       = image_tag @information.image.url ,size:250 if @information.image.present?
