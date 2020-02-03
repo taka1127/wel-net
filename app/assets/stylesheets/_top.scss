@@ -10,9 +10,19 @@
   background-position: center center;
   background-size: cover;
   position: relative;
-  
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
   &__header{
-    height: 10%;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 80px;
+    color: white;
+    #info{
+      text-decoration: none;
+      color: rgb(41, 41, 245);
+      border: solid 3px;
+    }
   }
   &__container{
     height: 60%;
@@ -26,7 +36,7 @@
         margin: 3% auto;
         width: 80%;
         // display: none;
-        font-size: 20px;
+        font-size: 25px;
         color: #b3aeb5;
         .text-active{
           display: block;
@@ -35,6 +45,6 @@
     }
   }
   &__footer{
-    height: 30%;
+    height: 50px;
   }
 }
