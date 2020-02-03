@@ -13,7 +13,6 @@
   
   &__header{
     height: 10%;
-    // background-color: beige;
   }
   &__container{
     height: 60%;
@@ -22,23 +21,20 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     line-height: 300px;
     padding-left: 20px;
-    
-    // background-color: brown;
+    #text{
+      #contents{
+        margin: 3% auto;
+        width: 80%;
+        // display: none;
+        font-size: 20px;
+        color: #b3aeb5;
+        .text-active{
+          display: block;
+        }
+      }
+    }
   }
   &__footer{
     height: 30%;
-    // background-color: burlywood;
   }
-  
 }
-// .top-body::before{
-//   /* 透過した黒を上から重ねるイメージ */
-//   background-color: rgba(0,0,0,0.4);
-//   /* 自由に位置指定 */
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   content: ' ';
-// }
