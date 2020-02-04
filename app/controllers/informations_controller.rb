@@ -10,6 +10,7 @@ class InformationsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @information = Information.new(information_params)
     @information.save
   end
