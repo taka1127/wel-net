@@ -2,6 +2,8 @@
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.11.2'
 
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
+
 # Capistranoのログの表示に利用する
 set :application, 'wel-net'
 
@@ -33,16 +35,4 @@ namespace :deploy do
     invoke 'unicorn:stop'
     invoke 'unicorn:start'
   end
-
-  desc 'upload credentials.yml'
-  task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
-      upload!('config/credentials.yml', "#{shared_path}/config/credentials.yml")
-    end
-  end
-  before :starting, 'deploy:upload'
-  after :finishing, 'deploy:cleanup'
 end
