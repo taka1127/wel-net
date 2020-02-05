@@ -2,11 +2,14 @@
   = render 'offices/shared/user_header'
   .contents__name
     = @office_name
-    様の投稿一覧
+    さんの投稿一覧
   .contents__post
-  - @informations.each do |information|
-    .contents__post__content
-      = simple_format(information.text)
-    .contents__post__image
-      = image_tag information.image.url, class: 'lower-message__image',size:250
-
+    = render 'offices/side_bar'
+    - @informations.each do |information|
+      .contents__post__content
+        = simple_format(information.text)
+        .contents__post__content__image
+          = image_tag information.image.url,size:250
+          .contents__post__date
+            %p= information.created_at.strftime("%Y年%m月%d日の投稿")
+            

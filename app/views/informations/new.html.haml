@@ -1,8 +1,8 @@
-.contents
+.new_contents
   = render 'offices/shared/user_header'
-  .contents__header
+  .new_contents__header
     事業所紹介・入力フォーム
-  .contents__containaer
+  .new_contents__containaer
     = form_with(model:@information, url:informations_path,metod: :post,local: true, class:"form" )  do |form|
       = form.text_field :name,placeholder: "事業所名を入力して下さい" ,class:"text_field"
       = form.text_field :office_tel, placeholder: "電話番号", class: "text_field"
