@@ -1,0 +1,33 @@
+.main__container__side{
+  width: 280px;
+  float: left;
+  margin: 20px 50px ;
+  position: fixed;
+  &__nav{
+    ul{
+      li{
+        margin-bottom: 20px;
+        height: 48px;
+        width: 250px;
+        padding: 16px 16px 16px 20px;
+        color: #333;
+        cursor: pointer;
+        border: solid 0.1px gray;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 0, 0.7);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        .list{
+          padding-left: 30px;
+          text-decoration: none;
+          color: #333;
+          font-size: 14px;
+        }
+        i{
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}

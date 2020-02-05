@@ -4,5 +4,5 @@ class Office < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :informations
-  has_many :comments
+  has_one :comments, dependent: :destroy
 end

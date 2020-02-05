@@ -2,33 +2,35 @@
   = render 'offices/shared/user_header'
   .show-content__post
     .show-content__post__more
-    - if office_signed_in? && current_office.id == @information.office_id
-      .show-content__post__more
-        = link_to edit_information_path, method: :get ,class: "edit" do
-          編集
-        = link_to information_path, method: :delete  ,class:"delete"do
-          削除
-    .show-content__post__more__name
-      = @information.name
-      = @information.prefecture
-      = @information.city
-      = simple_format(@information.text)
-    .show-content__post__more__image
-      = image_tag @information.image.url ,size:250 if @information.image.present?
+      .show-content__post__more__name
+        %p= @information.name
+        %p  さんの投稿
+      .show-content__post__more__place
+        %p  所在地：
+        %p= @information.prefecture
+        %p= @information.city
+      - if office_signed_in? && current_office.id == @information.office_id
+        .show-content__post__more__edit
+          = link_to edit_information_path, method: :get ,class: "edit" do
+            編集
+          = link_to information_path, method: :delete  ,class:"delete"do
+            削除
+    .show-content__post__container        
+      .show-content__post__container__text
+        = simple_format(@information.text)
+      .show-content__post__container__image
+        = image_tag @information.image.url ,size:250 if @information.image.present?
 
-    .show-content__post__more__container
+    .show-content__post__comment
       - if current_office 
         = form_with(model: [@information, @comment], url:information_comments_path(@information.id) , local: true,id:"new_comment") do |form|
-          = form.text_area :text, placeholder: "コメントをお願いします",class:"form"
+          = form.text_area :text, placeholder: "コメントを入力してください",class:"form"
           = form.submit "送信",class:"send"#{@information.id}
       - else
-    %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-    .show-content__post__more__btn    
-      = link_to informations_path,class:"edit-btn" do
-        ホーム画面に戻る
-
-    .show-content__post__more__comment
-      %p ＜コメント一覧＞
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .show-content__post__show
+      .show-content__post__show__header
+        ＜コメント一覧＞
       - if @comments
         - @comments.each do |comment|
           = comment.office.office_name 

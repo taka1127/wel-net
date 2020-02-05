@@ -45,7 +45,9 @@
             .info__contents__left__list__box__name
               = link_to information_path(information.id), method: :get do
                 =information.name
+                さんの投稿
             .info__contents__left__list__box__cities
+              %p= information.created_at.strftime("%Y年%m月%d日")
               %p= information.prefecture
               %p= information.city
     .info__contents__center
@@ -57,7 +59,9 @@
             .info__contents__center__list__box__name
               = link_to information_path(information.id), method: :get do
                 =information.name
+                さんの投稿
             .info__contents__center__list__box__cities
+              %p= information.created_at.strftime("%Y年%m月%d日")
               %p= information.prefecture
               %p= information.city
     .info__contents__right
@@ -69,7 +73,9 @@
             .info__contents__right__list__box__name
               = link_to information_path(information.id), method: :get do
                 =information.name
+                さんの投稿
             .info__contents__right__list__box__cities
+              %p= information.created_at.strftime("%Y年%m月%d日")
               %p= information.prefecture
               %p= information.city
   

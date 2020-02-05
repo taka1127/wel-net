@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :informations do
     resources :comments, only: :create
   end
-  resources :offices, only: :show
+  resources :offices, only: [:index,:show]
 end
 
