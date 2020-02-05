@@ -1,0 +1,57 @@
+.edit_contents{
+  background-color: beige;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: scroll;
+  &__header{
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-family:  sans-serif;
+  }
+  &__container{
+    padding:  50px;
+    .form{
+      height: 100px;
+      width: 500px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+      line-height: 100px;
+    }
+    .text_field{
+      height: 50px;
+      width: 500px;
+      display: block;
+      margin: 20px auto;
+    }
+    .text_area{
+      height: 300px;
+      width: 500px;
+      display: block;
+      margin-top: 20px;
+      margin: 0 auto 20px;
+    }
+    input.send{
+      width: 660px;
+      height: 50px;
+      display: block;
+      text-align: center;
+      line-height: 50px;
+      text-decoration: none;
+      font-size: 13px;
+      color: white;
+      background-color:rgba(75, 194, 241, 0.8);
+      border: 1px solid rgba(75, 194, 241, 0.8);
+      margin: 0 auto 20px;
+      cursor: pointer;
+      &:hover{
+        background-color:  rgb(75, 194, 241);
+        transition:all 0.3s;
+      }
+    }
+  }
+}

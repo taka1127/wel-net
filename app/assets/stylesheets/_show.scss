@@ -24,7 +24,7 @@
     &__content{
       float: right;
       height: 350px;
-      width: 700px;
+      width: 1000px;
       background-color: white;
       border: solid 2px;
       overflow: scroll;
@@ -32,7 +32,7 @@
       display: flex;
       p{
         display: block;
-        width: 400px;
+        width: 700px;
         padding: 10px;
       }
       &__image{
