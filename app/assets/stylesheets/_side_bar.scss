@@ -16,8 +16,12 @@
         border-radius: 20px;
         display: flex;
         justify-content: space-between;
-        background-color: rgba(255, 255, 0, 0.7);
+        background-color: rgba(42, 209, 36, 0.7);
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        &:hover{
+          background-color:  rgb(42, 209, 36);
+          transition:all 0.3s;
+        }
         .list{
           padding-left: 30px;
           text-decoration: none;
