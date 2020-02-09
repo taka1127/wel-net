@@ -11,7 +11,12 @@ class InformationsController < ApplicationController
 
   def create
     @information = Information.new(information_params)
-    @information.save
+    if @information.save
+      redirect_to informations_path(@information), notice: '投稿が完了しました'
+    else
+      flash.now[:alert] = '事業所名とテキストを入力してください'
+      render :new
+    end
   end
 
   def destroy
@@ -25,7 +30,6 @@ class InformationsController < ApplicationController
   def update
     information = Information.find(params[:id])
     information.update(information_params)
-    # redirect_to root_path
   end
   
   def show
