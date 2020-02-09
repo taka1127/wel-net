@@ -34,7 +34,9 @@ class InformationsController < ApplicationController
   
   def show
     @comment = Comment.new
-    @comments = @information.comments.includes(:office)
+    @comments = @information.comments.includes(:office).order(id: "DESC")
+    @user_comment = UserComment.new
+    @user_comments = @information.user_comments.includes(:user).order(id: "DESC")
   end
 
   private

@@ -2,6 +2,6 @@ class Information < ApplicationRecord
   validates :text,:name, presence: true
   belongs_to :office
   has_many :comments
-  # belongs_to :user
+  has_many :user_comments  # user_commentsテーブルとのアソシエーション
   mount_uploader :image, ImageUploader
 end
